@@ -1,0 +1,16 @@
+﻿@model List<int>
+<html>
+<head>
+    <title>Numeros</title>
+</head>
+<body>
+
+    <h1>Lista de numeros</h1>
+    <ul>
+        @foreach (var n in Model)
+        {
+            <li>Numero @n</li>
+        }
+    </ul>
+</body>
+</html>
