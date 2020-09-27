@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Actividad4.Models.CortosViewModel>
+
+@{
+    Layout = "_layout";
+}
+<div id="principalPeliculas">
+    @foreach (var categoria in Model)
+    {
+
+
+    <div id="pelis">
+
+        <h1>@categoria.NombreCategoria</h1>
+        @foreach (var corto in categoria.cortometrajes)
+        {
+            <div>
+                <a class="imgPelicula" href="~/Cortos/@corto.Nombre.Replace(" ","-")">
+                    <img src="~/images/portadas/@(corto.Id)_pc.jpg" alt="@corto.Nombre">
+                </a>
+                <div class="nombrePelicula">
+                    <p>@corto.Nombre</p>
+                </div>
+            </div>
+         }
+    </div>    
+    }
+</div>
