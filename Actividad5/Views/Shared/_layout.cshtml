@@ -1,0 +1,30 @@
+﻿@inject Actividad5.Services.ClassificationService servicio
+<html>
+<head>
+    <title>ZooPlanet</title>
+    <link href="~/StyleSheet.css" rel="stylesheet">
+    <link href="~/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1><a href="~/"><b>Zoo</b>Planet</a></h1>
+        <nav>
+            <ul>
+                <li><a href="~/">Home</a></li>
+                <li>
+                    <a href="~/Especies">Clasificación</a>
+                    <ul>
+                        @foreach (var c in servicio.Clasificacion)
+                        {
+            <li><a href="~/Especies/@c.Nombre">@c.Nombre</a></li>}
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>Programación Web</footer>
+</body>
+</html>
